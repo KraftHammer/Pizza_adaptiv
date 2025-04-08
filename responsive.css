@@ -1,0 +1,86 @@
+@media (width < 950px) {
+    .button-zone {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+  }
+  
+  @media (width < 768px) {
+    .cards-row {
+      width: 100%;
+      padding-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-right: -20px;
+    }
+  
+    .card {
+      background-color: #171918;
+      border-radius: 20px;
+      width: 31%;
+      padding-bottom: 16px;
+      flex: none;
+      max-width: none;
+      margin-right: 0px;
+    }
+  }
+  
+  @media (width < 650px) {
+    .card{
+      width: 45%;
+    }
+    .container {
+      flex-direction: column;
+    }
+  
+    .logo h1 {
+      font-size: 16px;
+    }
+  
+    .infoBlock {
+      display: flex;
+      padding-top: 10.5px;
+      padding-bottom: 10.5px;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0px;
+    }
+  }
+  
+  @media (width < 425px) {
+  
+    .button {
+      min-width: 90px;
+      font-size: 12px;
+    }
+  
+    .menu-item a {
+      font-size: 12px;
+      background-color: transparent;
+    }
+  
+    .menu-item p {
+      font-size: 12px;
+      background-color: transparent;
+    }
+  
+    .card {
+      background-color: #171918;
+      border-radius: 20px;
+      width: 45%;
+      padding-bottom: 16px;
+      flex: none;
+      max-width: none;
+      margin-right: 0px;
+    }
+  
+    .price-and-button-zone{
+      flex-direction: column;
+      gap: 10px;
+    }
+    .text-zone{
+      min-height: 135px;
+    }
+  }

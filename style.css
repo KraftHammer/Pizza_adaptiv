@@ -1,0 +1,508 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src: url('../Fonts/MontserratAlternates-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates Italic';
+  src: url('../Fonts/MontserratAlternates-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'MontserratAlternates-Light';
+  src: url('../Fonts/MontserratAlternates-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates Medium';
+  src: url('../Fonts/MontserratAlternates-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates Light Italic';
+  src: url('../Fonts/MontserratAlternates-LightItalic.ttf');
+}
+
+body {
+  font-family: 'Montserrat Alternates';
+  color: white;
+  background-image: url('Images/background.jpg');
+  /* Замените на путь к вашему изображению */
+  background-size: cover;
+  /* Покрывает весь контейнер */
+  background-position: center;
+  /* Центрирует изображение */
+  height: 100vh;
+  /* Высота блока равна высоте окна просмотра */
+  z-index: -1;
+
+}
+
+.button {
+  background-color: #e4ac06;
+  min-width: 153px;
+  height: 52px;
+  border-radius: 32px;
+  display: inline-block;
+  border-width: 0px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+}
+
+.button:hover {
+  background-color: #c6980f;
+}
+
+.button p {
+  background-color: none;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 40px 0px 40px;
+  display: flex;
+  align-items: center;
+  background-color: #171918;
+
+}
+
+.container-left {
+  max-width: 1440px;
+  margin-left: 0px;
+  padding: 60px 0px 0px 0px;
+  display: block;
+  align-items: left;
+}
+
+.container-card {
+  max-width: 1440px;
+  margin: 20px 0px;
+  text-align: center;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.header .container {
+  display: flex;
+  align-items: auto;
+}
+
+.logo {
+  background-color: #171918;
+  margin-left: 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+  border: 0;
+  color: white;
+  font-family: 'Montserrat Alternates Italic';
+  cursor: pointer;
+}
+
+.logo img {
+  vertical-align: bottom;
+}
+
+.logo h1 {
+  font-size: 1.7vw;
+  font-weight: lighter;
+  padding-left: 8px;
+}
+
+.Order-high-text {
+  background-color: transparent;
+  color: white;
+}
+
+.Title_h2 {
+  font-size: 1.4vw;
+  font-weight: lighter;
+  padding-left: 8px;
+  background-color: transparent;
+  background-color: transparent;
+}
+
+
+.infoBlock {
+  display: flex;
+  margin-left: auto;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+
+.infoContent {
+  display: flex;
+  padding: 0 16px;
+  align-items: center;
+}
+
+.infoContent img {
+  width: 24px;
+  height: 24px;
+}
+
+.infoContent p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-left: 8px;
+}
+
+.imageContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  max-height: 256px;
+  object-fit: cover;
+}
+
+.menu {
+  display: flex;
+  width: auto;
+  margin-top: -5px;
+  padding: 20px 40px 20px 40px;
+  align-items: center;
+  background: linear-gradient(to bottom, #171918, rgba(23, 25, 24, 0.25));
+}
+
+.menu-list {
+  display: flex;
+  text-decoration: none;
+  margin-left: 7%;
+  background-color: transparent;
+}
+
+.menu-item {
+  list-style-type: none;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-left: 12px;
+  transition: background-color 0.4s ease;
+  background-color: transparent;
+}
+
+.menu-item a {
+
+  text-decoration: none;
+  /* Убираем подчеркивание у ссылок */
+  color: white;
+  /* Цвет текста ссылок */
+  padding: 10px 15px;
+  /* Отступы для кнопок */
+  border-radius: 5px;
+  /* Скругленные углы */
+  transition: background-color 0.3s;
+  /* Переход цвета фона при наведении */
+  display: flex;
+  /* Используем flex для ссылок */
+  align-items: center;
+  /* Вертикальное выравнивание текста по центру */
+  justify-content: center;
+  /* Горизонтальное выравнивание текста по центру */
+  line-height: 1.7;
+  /* Высота строки для улучшения выравнивания */
+}
+
+.menu-item:hover {
+  background-color: #ffffff11;
+}
+
+.menu-item p {
+  margin: 14px 20px 14px 20px;
+  font-size: 16px;
+  background-color: transparent;
+}
+
+.card-horizontal {
+  width: min-content;
+  min-height: min-content;
+  background-color: #171918;
+  border-radius: 40px;
+  border-width: 0;
+  display: flex;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-right: 20px;
+  transition: background-color 0.4s ease;
+}
+
+.card-horizontal:hover {
+  background-color: #1e1f1e;
+}
+
+.container-card-image {
+  text-align: left;
+  margin-right: 8px;
+}
+
+.image-zone {
+  width: 100%;
+  /* Занимает всю ширину родительского элемента */
+  max-width: 300px;
+  /* Максимальная ширина изображения */
+  margin: 0 auto;
+  /* Центрируем элемент по горизонтали */
+  overflow: hidden;
+  /* Скроем выходящее за пределы содержимое */
+}
+
+.image-zone img {
+  width: 100%;
+  /* Изображение занимает 100% ширины контейнера */
+  height: auto;
+  /* Высота автоматически подстраивается */
+  display: block;
+  /* Убираем отступы под изображением */
+}
+
+.container-card-information {
+  min-width: 168px;
+  display: grid;
+}
+
+.container-card-name {
+  color: white;
+  text-align: left;
+  font-size: 0.8vw;
+  font-family: 'MontserratAlternates-Light';
+  margin-top: auto;
+}
+
+.container-card-price {
+  padding-top: 8px;
+  color: white;
+  text-align: left;
+  font-size: 0.6vw;
+  font-family: 'MontserratAlternates-Light';
+  margin-bottom: auto;
+}
+
+.banner {
+  margin-top: 80px;
+  width: 100%;
+  height: 420px;
+}
+
+.container-left {
+  min-width: none;
+  height: fit-content;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: white;
+}
+
+.cards-row {
+  width: 100%;
+  /* height:fit-content; */
+  padding-right: 20px;
+  padding-top: 20px;
+  display: flex;
+  /* Включаем флексбокс */
+  flex-wrap: wrap;
+  /* Позволяем карточкам переноситься на новую строку */
+  margin-right: -20px;
+}
+
+.cards-row .card:last-child {
+  margin-right: 0;
+}
+
+.card {
+  background-color: #171918;
+  border-radius: 20px;
+  max-width: calc(25% - 15px);
+  padding-bottom: 16px;
+  flex: 0 0 calc(25% - 20px);
+  margin-right: 20px;
+}
+
+.main-text-card {
+  padding-bottom: 8px;
+  font-family: 'Montserrat Alternates';
+  font-size: 1.5vw;
+}
+
+.text-zone {
+  min-height: 100px;
+  padding-bottom: 12px;
+  margin: 0px 16px 0px 16px;
+}
+
+.desc-text-card {
+  font-family: 'Montserrat Alternates';
+  font-size: 1vw;
+  min-height: 88px;
+}
+
+.small-text {
+  padding-bottom: 4px;
+}
+
+.pizza-size-select {
+  margin: 0px 16px 0px 16px;
+}
+
+.price-and-button-zone {
+  margin: 16px 16px 0px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: 'Montserrat Alternates Medium';
+}
+
+.button-zone {
+  display: flex;
+  height: fit-content;
+  padding-top: 4px;
+}
+
+.button-size,
+.button-size-not-selected {
+  min-height: 44px;
+  /* Убедитесь, что высота одинакова */
+  min-width: 78px;
+  /* Убедитесь, что ширина одинакова */
+  border-radius: 32px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border 0.2s ease;
+  /* Добавьте transition для border */
+}
+
+.button-size,
+.button-size-not-selected {
+  box-sizing: border-box;
+  /* Добавьте это свойство */
+}
+
+.button-size {
+  background-color: #FEC009;
+  border: 2px solid transparent;
+  /* Добавьте прозрачную границу */
+}
+
+.button-size-not-selected {
+  border: 2px solid #FEC009;
+  background-color: transparent;
+  /* Убедитесь, что фон прозрачный */
+}
+
+.button-size-not-selected:hover {
+  background-color: #c6980f28;
+}
+
+.button-buy {
+  border-radius: 32px;
+  border: 2px solid #FEC009;
+  min-height: 52px;
+  min-width: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.button-buy:hover {
+  background-color: #c6980f4d;
+}
+
+.footer {
+  position: bottom;
+  margin-top: 200px;
+  width: 100%;
+  height: 76px;
+  background-color: #171918;
+  text-align: center;
+}
+
+.footer-main-text {
+  font-family: 'Montserrat Alternates Light Italic';
+  padding-top: 12px;
+  font-size: 1.6vw;
+}
+
+.footer-desc-text {
+  font-family: 'MontserratAlternates-Light';
+}
+
+@media (width < 1024px) {
+  .menu-list {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .card {
+    min-height: 0px;
+  }
+
+  .container-card-name h2 {
+    font-size: 16px !important;
+  }
+
+  .container-card-price h2 {
+    font-size: 10px !important;
+  }
+
+  .main-text-card h4 {
+    font-size: 16px;
+  }
+
+  .desc-text-card p {
+    font-size: 10px;
+  }
+
+  .button-size,
+  .button-size-not-selected {
+    min-height: 34px;
+    min-width: 60px;
+    font-size: 12px;
+  }
+
+  .footer-main-text {
+    font-size: 12px;
+  }
+
+  .button-buy {
+    min-height: 34px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .footer-main-text,
+  .footer-main-text {
+    font-size: 16px;
+  }
+
+  .cards-row {
+    padding-right: 0px;
+  }
+}
+
