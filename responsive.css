@@ -91,6 +91,10 @@
       max-width: none;
       margin-right: 0px;
     }
+
+    .desc-text-card p{
+      font-size: 10.8px;
+    }
   
     .price-and-button-zone{
       flex-direction: column;
@@ -100,5 +104,9 @@
     .text-zone{
       min-height: 135px;
       padding: 0 0 0 0;
+    }
+
+    .pizza-size-select {
+      padding-top: 12px;
     }
   }
