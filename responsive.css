@@ -50,22 +50,38 @@
   }
   
   @media (width < 425px) {
-  
+
+    .imageContainer {
+      display: none;
+    }
+
     .button {
       min-width: 90px;
       font-size: 12px;
+    }
+
+    .button-buy {
+      min-width: 116px;
+    }
+
+    .menu {
+      padding: 12px 20px 12px 20px;
     }
   
     .menu-item a {
       font-size: 12px;
       background-color: transparent;
     }
-  
+
     .menu-item p {
       font-size: 12px;
       background-color: transparent;
     }
   
+    .container-left {
+      padding: 32px 8px 0 20px;
+    }
+
     .card {
       background-color: #171918;
       border-radius: 20px;
@@ -80,7 +96,9 @@
       flex-direction: column;
       gap: 10px;
     }
+
     .text-zone{
       min-height: 135px;
+      padding: 0 0 0 0;
     }
   }
