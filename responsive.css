@@ -1,3 +1,31 @@
+/* Адаптация для 1024px */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 60px;
+  }
+  
+  .image-container img {
+    height: 300px; /* Фиксированная высота (или оставь auto) */
+  }
+}
+
+/* Адаптация для 4K (2560px+) */
+@media (min-width: 2560px) {
+  .container {
+    padding: 0 5%; /* Гибкие отступы */
+    max-width: none; /* Полная ширина экрана */
+  }
+  
+    .imageContainer {
+      max-width: none; /* Снимаем ограничение */
+    }
+  
+    .image-container img {
+      min-height: 500px; /* Увеличиваем высоту для 4K */
+      width: 100%;
+    }
+}
+
 @media (width < 950px) {
     .button-zone {
       display: flex;
