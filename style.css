@@ -3,6 +3,32 @@
   padding: 0;
 }
 
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+  width: 6px; /* Немного шире для лучшей видимости */
+  height: 6px;
+  position: fixed; /* Фиксированное позиционирование */
+  z-index: 9999; /* На самом верхнем слое */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px 0; /* Отступы сверху/снизу */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Тонкая граница */
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
 html, body {
   scroll-behavior: smooth;
     font-family: 'Montserrat Alternates';
@@ -16,6 +42,10 @@ html, body {
     padding: 0;
     width: 100%;
     overflow-x: hidden;
+
+    overflow-y: overlay; /* Важно для Chrome */
+    padding-right: 0 !important;
+    margin-right: 0 !important;
 }
 
 @font-face {
@@ -45,24 +75,30 @@ html, body {
 
 .button {
   background-color: #e4ac06;
-  min-width: 153px;
-  height: 52px;
   border-radius: 32px;
-  display: inline-block;
-  border-width: 0px;
+  border: none;
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  position: absolute;
+  left: 40px; /* Прижимаем ближе к краю */
+  margin: 0;
+  padding: 0;
 }
 
 .button:hover {
   background-color: #c6980f;
 }
 
+
 .button p {
   background-color: none;
 }
+
 
 .container {
   width: 100%;
@@ -75,22 +111,16 @@ html, body {
   margin: 0 auto;
 }
 
-.container-left {
-  max-width: 1440px;
-  margin-left: 0px;
-  padding: 60px 0px 0px 0px;
-  display: block;
-  align-items: left;
-}
-
 .container-card {
   max-width: 1440px;
-  margin: 20px 0px;
+  margin: 20px auto;
   text-align: center;
   display: flex;
   overflow-x: auto;
   scrollbar-width: none;
   white-space: nowrap;
+  box-sizing: border-box;
+
 }
 
 .header .container {
@@ -121,9 +151,10 @@ html, body {
   padding-left: 8px;
 }
 
-.Order-high-text {
-  background-color: transparent;
-  color: white;
+.Order-high-text h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 .Title_h2 {
@@ -154,7 +185,7 @@ html, body {
 }
 
 .infoContent p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 20px;
   margin-left: 8px;
 }
@@ -172,20 +203,25 @@ html, body {
   object-fit: cover;
 }
 
+/* Базовые стили меню */
 .menu {
   display: flex;
-  width: auto;
-  margin-top: -5px;
-  padding: 20px 40px 20px 40px;
+  justify-content: center; /* Центрируем содержимое */
   align-items: center;
+  padding: 30px 40px 30px 80px; /* Уменьшаем левый отступ */
+  position: relative;
   background: linear-gradient(to bottom, #171918, rgba(23, 25, 24, 0.25));
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .menu-list {
   display: flex;
-  text-decoration: none;
-  margin-left: 7%;
-  background-color: transparent;
+  gap: 24px; /* Расстояние между пунктами */
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .menu-item {
@@ -195,28 +231,22 @@ html, body {
   margin-left: 12px;
   transition: background-color 0.4s ease;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .menu-item a {
-
   text-decoration: none;
-  /* Убираем подчеркивание у ссылок */
   color: white;
-  /* Цвет текста ссылок */
   padding: 10px 15px;
-  /* Отступы для кнопок */
   border-radius: 5px;
-  /* Скругленные углы */
   transition: background-color 0.3s;
-  /* Переход цвета фона при наведении */
   display: flex;
-  /* Используем flex для ссылок */
-  align-items: center;
-  /* Вертикальное выравнивание текста по центру */
+  align-items: center; /* Дублируем для надежности */
   justify-content: center;
-  /* Горизонтальное выравнивание текста по центру */
   line-height: 1.7;
-  /* Высота строки для улучшения выравнивания */
+  height: 100%;
 }
 
 .menu-item:hover {
@@ -224,31 +254,38 @@ html, body {
 }
 
 .menu-item p {
-  margin: 14px 20px 14px 20px;
+  margin: 14px 20px;
   font-size: 16px;
   background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center; /* Выравниваем по центру */
+  height: 100%;
 }
 
 .card-horizontal {
-  width: min-content;
-  min-height: min-content;
+  min-width: 250px;
+  height: 80px;
   background-color: #171918;
   border-radius: 40px;
-  border-width: 0;
   display: flex;
+  align-items: center;
   padding: 8px 12px;
   cursor: pointer;
   margin-right: 20px;
-  transition: background-color 0.4s ease;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 .card-horizontal:hover {
-  background-color: #1e1f1e;
+  background-color: #1f2121;
 }
 
-.container-card-image {
-  text-align: left;
-  margin-right: 8px;
+.container-card-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 15px;
 }
 
 .image-zone {
@@ -271,9 +308,15 @@ html, body {
   /* Убираем отступы под изображением */
 }
 
-.container-card-information {
-  min-width: 168px;
-  display: grid;
+.container-card-information h2 {
+  font-family: "MontserratAlternates-Light", sans-serif;
+  font-size: 14px;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.container-card::-webkit-scrollbar {
+  display: none;
 }
 
 .container-card-name {
@@ -300,11 +343,11 @@ html, body {
 }
 
 .container-left {
-  min-width: none;
+  width: 100%;
   height: fit-content;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 32px 40px 32px 40px;
   color: white;
+  box-sizing: border-box;
 }
 
 .cards-row {
@@ -326,10 +369,14 @@ html, body {
 .card {
   background-color: #171918;
   border-radius: 20px;
-  max-width: calc(25% - 15px);
-  padding-bottom: 16px;
-  flex: 0 0 calc(25% - 20px);
+  width: calc(25% - 20px); /* Фиксированная ширина вместо min-width */
   margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Колоночное расположение элементов */
+  position: relative; /* Для абсолютного позиционирования кнопки */
+  min-height: 400px; /* Фиксированная минимальная высота */
+  padding-bottom: 16px;
 }
 
 .main-text-card {
@@ -339,9 +386,10 @@ html, body {
 }
 
 .text-zone {
-  min-height: 100px;
-  padding-bottom: 12px;
-  margin: 0px 16px 0px 16px;
+  flex-grow: 1; /* Занимает все доступное пространство */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .desc-text-card {
