@@ -6,6 +6,11 @@
   .menu-list {
     margin-left: 10%;
   }
+
+  h2 {
+    font-size: 28px;
+    margin: 40px 0;
+  }
   
   .container-left {
     padding: 0 60px;
@@ -38,6 +43,10 @@
 @media (min-width: 1024px) {
   .container {
     padding: 0 60px;
+  }
+
+  .image-container {
+    height: 300px;
   }
   
   .image-container img {
@@ -77,9 +86,9 @@
 @media (min-width: 2560px) {
 
   .container-left {
-    padding: 0 10%;
-    max-width: 2560px;
+    max-width: 2000px;
     margin: 0 auto;
+    padding: 48px 60px;
   }
   
   .Order-high-text h2 {
@@ -91,6 +100,7 @@
     max-width: 2000px;
     margin: 30px auto;
     padding-bottom: 40px;
+    gap: 32px;
   }
   
   .card-horizontal {
@@ -110,6 +120,20 @@
   .container-card-information h2 {
     font-size: 22px;
   }
+
+  .slider-button {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+}
+
+.slider-button.left {
+    margin-right: 20px;
+}
+
+.slider-button.right {
+    margin-left: 20px;
+}
 
   .pizza {
     font-size: 36px;
