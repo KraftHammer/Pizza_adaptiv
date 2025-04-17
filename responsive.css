@@ -419,7 +419,7 @@
     }
   }
   
-  @media (width < 425px) {
+  @media (width < 426px) {
 
     .imageContainer {
       display: none;
@@ -472,7 +472,7 @@
     }
   
     .container-left {
-      padding: 32px 8px 0 20px;
+      padding: 16px 20px;
     }
 
     .card {
@@ -484,6 +484,14 @@
       max-width: none;
       margin-right: 0px;
     }
+
+    .card h4 {
+      font-size: 14px !important;
+  }
+
+    .price p {
+      font-size: 12px !important;
+  }
 
     .desc-text-card p{
       font-size: 10.8px;
@@ -507,4 +515,28 @@
       min-height: 52px;
       font-size: 12px;
     }
+
+    .Order-high-text h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      padding-left: 0;
   }
+
+    .slider-container {
+      margin-left: 0px;
+      padding-left: -12px;
+  }
+
+    .card-horizontal {
+      min-width: 250px;
+    }
+
+}
+
+@media (width < 375px) { 
+
+  .slider-container {
+    margin-left: -12px;
+}
+
+}
