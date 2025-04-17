@@ -51,27 +51,39 @@ html, body {
 
 @font-face {
   font-family: 'Montserrat Alternates';
-  src: url('/Fonts/MontserratAlternates-Regular.ttf');
+  src: url('Fonts/MontserratAlternates-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
 }
 
 @font-face {
   font-family: 'Montserrat Alternates Italic';
   src: url('/Fonts/MontserratAlternates-Italic.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
 }
 
 @font-face {
   font-family: 'MontserratAlternates-Light';
-  src: url('/Fonts/MontserratAlternates-Light.ttf');
+  src: url('/Fonts/MontserratAlternates-Light.ttf');font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
 }
 
 @font-face {
   font-family: 'Montserrat Alternates Medium';
-  src: url('/Fonts/MontserratAlternates-Medium.ttf');
+  src: url('/Fonts/MontserratAlternates-Medium.ttf');font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
 }
 
 @font-face {
   font-family: 'Montserrat Alternates Light Italic';
-  src: url('/Fonts/MontserratAlternates-LightItalic.ttf');
+  src: url('/Fonts/MontserratAlternates-LightItalic.ttf');font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
 }
 
 .button {
