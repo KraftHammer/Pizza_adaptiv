@@ -208,62 +208,61 @@ html, body {
 
 /* Базовые стили меню */
 .menu {
-  display: flex;
-  justify-content: center; /* Центрируем содержимое */
-  align-items: center;
-  padding: 30px 40px 30px 80px; /* Уменьшаем левый отступ */
-  position: relative;
-  background-color: #1e1e1e;
+  display: block; /* Changed from flex to block */
   width: 100%;
+  background-color: #1e1e1e;
+  padding: 10px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  /* Remove previous positioning and padding */
+  position: static;
+  left: auto;
+  margin: 0;
   box-sizing: border-box;
-  margin: 0 auto;
 }
 
 .menu-list {
-  display: flex;
-  gap: 24px; /* Расстояние между пунктами */
+  display: inline-block; /* Changed from flex */
   margin: 0;
-  padding: 0;
+  padding: 0 15px; /* Added horizontal padding */
   list-style: none;
+  white-space: nowrap;
+  /* Remove gap property as we'll use margins */
 }
 
 .menu-item {
-  list-style-type: none;
+  display: inline-block;
+  margin: 0 12px 0 0; /* Right margin only */
+  padding: 0;
   cursor: pointer;
   border-radius: 12px;
-  margin-left: 12px;
   transition: background-color 0.4s ease;
   background-color: transparent;
-  display: flex;
-  align-items: center;
-  height: 100%;
+  vertical-align: middle;
 }
 
+.menu-item:first-child {
+  margin-left: 15px; /* First item spacing */
+}
+
+.menu-item:last-child {
+  margin-right: 15px; /* Last item spacing */
+}
+
+
 .menu-item a {
+  display: inline-block;
   text-decoration: none;
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s;
-  display: flex;
-  align-items: center; /* Дублируем для надежности */
-  justify-content: center;
   line-height: 1.7;
-  height: 100%;
 }
 
 .menu-item:hover {
   background-color: #ffffff11;
-}
-
-.menu-item p {
-  margin: 14px 20px;
-  font-size: 16px;
-  background-color: transparent;
-  color: white;
-  display: flex;
-  align-items: center; /* Выравниваем по центру */
-  height: 100%;
 }
 
 .card-horizontal {
