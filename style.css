@@ -51,7 +51,7 @@ html, body {
 
 @font-face {
   font-family: 'Montserrat Alternates';
-  src: url('Fonts/MontserratAlternates-Regular.ttf') format('truetype');
+  src: url('./Fonts/MontserratAlternates-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* Для оптимизации загрузки */
@@ -59,7 +59,7 @@ html, body {
 
 @font-face {
   font-family: 'Montserrat Alternates Italic';
-  src: url('/Fonts/MontserratAlternates-Italic.ttf');
+  src: url('./Fonts/MontserratAlternates-Italic.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: swap; /* Для оптимизации загрузки */
@@ -67,7 +67,7 @@ html, body {
 
 @font-face {
   font-family: 'MontserratAlternates-Light';
-  src: url('/Fonts/MontserratAlternates-Light.ttf');font-weight: normal;
+  src: url('./Fonts/MontserratAlternates-Light.ttf');font-weight: normal;
   font-style: normal;
   font-display: swap; /* Для оптимизации загрузки */
 }
@@ -81,7 +81,7 @@ html, body {
 
 @font-face {
   font-family: 'Montserrat Alternates Light Italic';
-  src: url('/Fonts/MontserratAlternates-LightItalic.ttf');font-weight: normal;
+  src: url('./Fonts/MontserratAlternates-LightItalic.ttf');font-weight: normal;
   font-style: normal;
   font-display: swap; /* Для оптимизации загрузки */
 }
@@ -232,6 +232,15 @@ html, body {
   left: auto;
   margin: 0;
   box-sizing: border-box;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .menu-list {
@@ -561,5 +570,3 @@ html, body {
 .footer-desc-text {
   font-family: 'MontserratAlternates-Light';
 }
-
-
