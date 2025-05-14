@@ -42,7 +42,15 @@
 /* Адаптация для 1024px */
 @media (min-width: 1024px) {
   .container {
-    padding: 0 60px;
+    padding: 0 32px;
+  }
+
+  .container h1 {
+    font-size: 20px;
+  }
+
+  .infoContent p {
+    font-size: 11px;
   }
 
   .image-container {
@@ -319,12 +327,20 @@
       font-size: 16px;
     }
 
-    .infoBlock p{
+    .container {
+      padding: 0 20px;
+    }
+
+    .infoBlock p {
         max-width: 140px;
     }
 
+    .infoContent {
+        padding: 0 8px;
+    }
+
     .infoContent p{
-        font-size: 10px;
+        font-size: 8px;
     }
 
     .menu::-webkit-scrollbar {
