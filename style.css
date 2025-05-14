@@ -143,6 +143,13 @@ html, body {
   align-items: auto;
 }
 
+.sub-header-text {
+  font-size: 20px;
+  margin: 20px 0 20px 0;
+  font-family: 'Montserrat Alternates';
+
+}
+
 .logo {
   background-color: #171918;
   margin-left: 0px;
@@ -232,15 +239,13 @@ html, body {
   left: auto;
   margin: 0;
   box-sizing: border-box;
+  text-align: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .menu::-webkit-scrollbar {
   display: none;
-}
-
-.menu {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 .menu-list {
