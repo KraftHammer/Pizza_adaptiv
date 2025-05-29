@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация | Наша пицца</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="icon" href="Images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div class="containerCenter">
+        <img class="animated-entry-top logo" src="Images/logo.png" alt="logo" width="128px">
+        <h1 class="animated-entry-top subtitle">Наша пицца</h1>
+        <h4 class="animated-entry-top subtitle">Вход для сотрудников</h4>
+    </div>
+
+    <div class="auth-center-container">
+        <div class="animated-entry-bottom auth-form">
+        <div class="input-group">
+         <form id="authForm" novalidate>
+            <div class="input-field">
+                <input type="text" id="login" name="login" placeholder=" " required 
+                       pattern="[a-zA-Z0-9]{4,20}" 
+                       title="Логин должен содержать только латинские буквы и цифры (4-20 символов)">
+                <label for="login">Логин</label>
+                <div class="error-message" id="login-error"></div>
+            </div>
+            
+            <div class="input-field">
+                <input type="password" id="password" name="password" placeholder=" " required
+                       minlength="8"
+                       pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+                       title="Пароль должен содержать минимум 8 символов, включая заглавные и строчные буквы и цифры">
+                    <label for="password">Пароль</label>
+                  <div class="error-message" id="password-error"></div>
+             </div>
+            </form>
+        </div>
+
+    <div class="animated-entry-bottom auth-actions">
+        <button id="authButton" class="button button--outline">Авторизоваться</button>
+        <a class="linkHide" href="index.html">Вернуться на главную</a>
+        </div>
+    </div>
+</div>
+
+    <script src="./Scripts/AutoButton.js"></script>
+</body>
+</html>
