@@ -94,22 +94,53 @@ html, body {
   font-size: 16px;
   cursor: pointer;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  position: absolute;
-  right: 40px; /* Прижимаем ближе к краю */
   margin: 0;
-  padding: 0;
+  padding: 16px;
 }
 
 .button:hover {
   background-color: #c6980f;
 }
 
+.button--outline {
+  background-color: transparent;
+  border: 2px solid #e4ac06;
+  color: #ffffff;
+}
+
+.button--outline:hover {
+background-color: rgba(228, 172, 6, 0.1);
+}
 
 .button p {
   background-color: none;
+}
+
+.auth-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* Отступ между кнопкой и ссылкой */
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Стили для ссылки (модифицированные) */
+.linkHide {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+    display: inline-block; /* Чтобы работали отступы */
+}
+
+.linkHide:hover {
+    color: #e4ac06; /* Цвет при наведении как у кнопки */
 }
 
 
@@ -208,7 +239,7 @@ html, body {
 }
 
 .infoContent p {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
   margin-left: 8px;
 }
@@ -217,6 +248,138 @@ html, body {
   width: 100vw; /* Ширина 100% от окна браузера */
   margin-left: calc(-50vw + 50%); /* Центрирование (если нужно) */
   overflow: hidden;
+}
+
+.containerCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 42vh;
+}
+
+.containerCenter h1 {
+  margin-top: 0px;
+}
+
+.containerCenter h4 {
+  margin-top: 12px;
+  font-family: 'MontserratAlternates-Light';
+  font-weight: 500;
+}
+
+.auth-center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+ /* Анимация появления сверху */
+        .animated-entry-top {
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInDown 0.6s ease-out forwards;
+        }
+        
+        /* Анимация появления снизу */
+        .animated-entry-bottom {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Задержки для последовательного появления */
+        .logo {
+            animation-delay: 0.2s;
+        }
+        
+        .subtitle {
+            animation-delay: 0.4s;
+        }
+        
+        .auth-form {
+            animation-delay: 0.6s;
+        }
+        
+        .auth-actions {
+            animation-delay: 0.8s;
+        }
+
+ .input-group {
+  width: 300px;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.input-field input:focus {
+  border-color: #d32f2f;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
+.input-field label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #999;
+  transition: all 0.3s;
+  pointer-events: none;
+  background-color: #fff;
+  padding: 0 5px;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #d32f2f;
+  background-color: #fff;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
 }
 
 .image-container img {
@@ -340,6 +503,19 @@ html, body {
   display: flex;
   align-items: center;
   margin-left: 40px; /* Выравниваем с заголовком */
+}
+
+.AuthorizationButton {
+  background-color: transparent;
+  font-family: 'Montserrat Alternates';
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Вертикальное выравнивание */
+  justify-content: center; /* Горизонтальное выравнивание */
 }
 
 .slider-button {
@@ -575,7 +751,6 @@ html, body {
 .footer-desc-text {
   font-family: 'MontserratAlternates-Light';
 }
-
 
 #scrollToTopBtn {
     position: fixed;
