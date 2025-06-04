@@ -15,9 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Отправляем запрос
             const response = await fetch('https://pizza-adaptiv.vercel.app/api/auth', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ login, password })
+              method: 'POST',
+              headers: { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify({ login, password })
             });
             
             // Обрабатываем ответ
