@@ -9,6 +9,6 @@ document.getElementById('authForm').addEventListener('submit', async (e) => {
     })
   });
   const result = await response.json();
-  if (result.success) window.location.href = 'dashboard.html';
+  if (result.success) window.location.href = 'index.html';
   else alert('Ошибка авторизации!');
 });
