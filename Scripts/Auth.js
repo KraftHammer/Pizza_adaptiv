@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('authForm');
+  const form = document.getElementById('authButton');
   
   if (!form) {
     console.error('Форма не найдена!');
