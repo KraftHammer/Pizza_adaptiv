@@ -1,3 +1,4 @@
+/*
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('authForm');
   
@@ -42,3 +43,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+*/
+
+// Импортируем Supabase SDK
+const { createClient } = require('@supabase/supabase-js');
+
+// Создаем клиент для работы с Supabase
+const supabase = createClient(
+  process.env.SUPABASE_URL, // URL вашей базы (берется из переменных окружения Vercel)
+  process.env.SUPABASE_KEY  // API ключ (тоже из переменных окружения)
+);
+
+// Основная функция-обработчик
+module.exports = async (req, res) => {
+  // 1. Получаем данные из запроса
+  const { login, password } = req.body;
+  
+  // 2. Ищем пользователя в базе данных
+  try {
+    const { data: user, error } = await supabase
+      .from('users')          // Ваша таблица с пользователями
+      .select('*')            // Выбираем все поля
+      .eq('login', login)     // Ищем по логину
+      .single();              // Ожидаем одну запись
+
+    // 3. Обработка ошибок поиска
+    if (error) {
+      console.error('Ошибка поиска пользователя:', error);
+      return res.status(500).json({ 
+        success: false, 
+        message: 'Ошибка сервера' 
+      });
+    }
+
+    // 4. Если пользователь не найден
+    if (!user) {
+      return res.status(401).json({ 
+        success: false, 
+        message: 'Пользователь не найден' 
+      });
+    }
+
+    // 5. Проверка пароля (ВНИМАНИЕ: для продакшена нужно хеширование!)
+    // В вашем случае пароли хранятся в открытом виде
+    if (user.password !== password) {
+      return res.status(401).json({ 
+        success: false, 
+        message: 'Неверный пароль' 
+      });
+    }
+
+    // 6. Успешная авторизация
+    res.json({ 
+      success: true,
+      userId: user.id,
+      message: 'Авторизация успешна'
+    });
+
+  } catch (err) {
+    console.error('Общая ошибка:', err);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Внутренняя ошибка сервера' 
+    });
+  }
+};
