@@ -1,4 +1,4 @@
-
+/*
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('authForm');
   
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
+*/
 // Импортируем Supabase SDK
 const { createClient } = require('@supabase/supabase-js');
 
