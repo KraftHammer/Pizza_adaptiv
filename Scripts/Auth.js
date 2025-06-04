@@ -32,3 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('Скрипт загружен!'); // Должен появиться в консоли
+  
+  const form = document.getElementById('authForm');
+  if (!form) {
+    console.error('Форма не найдена! Проверьте id="authForm"');
+    return;
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('Кнопка нажата!'); // Проверка срабатывания
+    
+    // Тестовый редирект
+    window.location.href = 'index.html';
+  });
+});
