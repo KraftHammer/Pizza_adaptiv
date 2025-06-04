@@ -1,4 +1,4 @@
-/*
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('authForm');
   
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch('https://sau-api.vercel.app/api/auth', {
+      const response = await fetch('https://pizza-adaptiv.vercel.app/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ login, password })
@@ -43,8 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-*/
 
 // Импортируем Supabase SDK
 const { createClient } = require('@supabase/supabase-js');
