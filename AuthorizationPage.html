@@ -18,7 +18,7 @@
     <div class="auth-center-container">
         <div class="animated-entry-bottom auth-form">
         <div class="input-group">
-         <form id="authForm" novalidate>
+         <form id="authForm">
             <div class="input-field">
                 <input type="text" id="login" name="login" placeholder=" " required 
                        pattern="[a-zA-Z0-9]{4,20}" 
@@ -35,12 +35,13 @@
                     <label for="password">Пароль</label>
                   <div class="error-message" id="password-error"></div>
              </div>
-            </form>
-        </div>
-
-    <div class="animated-entry-bottom auth-actions">
+             
+             <div class="animated-entry-bottom auth-actions">
       <button type="submit" id="authButton" class="button button--outline">Авторизоваться</button>
         <a class="linkHide" href="index.html">Вернуться на главную</a>
+        </div>
+             
+            </form>
         </div>
     </div>
 </div>
