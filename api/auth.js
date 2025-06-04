@@ -1,4 +1,3 @@
-// Этот код должен быть ТОЛЬКО в папке /api
 const { createClient } = require('@supabase/supabase-js');
 
 const supabase = createClient(
@@ -7,9 +6,20 @@ const supabase = createClient(
 );
 
 module.exports = async (req, res) => {
-  const { login, password } = req.body;
-  
+  // Разрешаем запросы с вашего домена GitHub Pages
+  res.setHeader('Access-Control-Allow-Origin', 'https://krafthammer.github.io');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Обрабатываем предварительный OPTIONS-запрос
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  // Основная логика
   try {
+    const { login, password } = req.body;
+    
     const { data: user, error } = await supabase
       .from('users')
       .select('*')
@@ -17,12 +27,17 @@ module.exports = async (req, res) => {
       .single();
 
     if (error || !user) {
-      return res.status(401).json({ success: false, message: 'Пользователь не найден' });
+      return res.status(401).json({ 
+        success: false, 
+        message: 'Пользователь не найден' 
+      });
     }
 
-    // Для теста: простая проверка пароля (замените на bcrypt.compare в продакшене)
     if (user.password !== password) {
-      return res.status(401).json({ success: false, message: 'Неверный пароль' });
+      return res.status(401).json({ 
+        success: false, 
+        message: 'Неверный пароль' 
+      });
     }
 
     res.json({ 
@@ -32,6 +47,9 @@ module.exports = async (req, res) => {
     
   } catch (err) {
     console.error(err);
-    res.status(500).json({ success: false, message: 'Ошибка сервера' });
+    res.status(500).json({ 
+      success: false, 
+      message: 'Ошибка сервера' 
+    });
   }
 };
