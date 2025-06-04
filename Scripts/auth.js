@@ -4,21 +4,23 @@ document.addEventListener('DOMContentLoaded', () => {
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    const login = document.getElementById('login').value;
-    const password = document.getElementById('password').value;
+    const login = document.getElementById('login').value; // исправлено
+    const password = document.getElementById('password').value; // исправлено
 
     try {
-      // 1. Отправляем запрос на ваш API
       const response = await fetch('https://pizza-adaptiv.vercel.app/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ login, password })
       });
       
-      // 2. Обрабатываем ответ
+      // Проверка статуса ответа
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
       const result = await response.json();
       
-      // 3. Проверяем результат
       if (result.success) {
         localStorage.setItem('userId', result.userId);
         window.location.href = 'index.html';
