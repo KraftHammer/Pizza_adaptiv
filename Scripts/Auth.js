@@ -1,3 +1,11 @@
+// Игнорирование ошибок расширений
+window.addEventListener('error', (e) => {
+  if (e.message.includes('runtime.lastError')) {
+    e.preventDefault();
+    console.warn('Игнорируем ошибку расширения');
+  }
+});
+
 // Упрощенная версия без внешних зависимостей
 function initializeAuth() {
   console.log('Auth system init...');
