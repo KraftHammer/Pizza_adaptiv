@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       // 1. Отправляем запрос на ваш API
-      const response = await fetch('https://sau-api.vercel.app/api/auth', {
+      const response = await fetch('https://pizza-adaptiv.vercel.app/api/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ login, password })
