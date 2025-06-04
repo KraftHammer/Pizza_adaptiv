@@ -1,35 +1,35 @@
-const { createClient } = require('@supabase/supabase-js');
-const supabase = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_KEY
-);
-
-module.exports = async (req, res) => {
-  const { login, password } = req.body;
-  const { data, error } = await supabase
-    .from('users')
-    .select('*')
-    .eq('login', login)
-    .eq('password', password);
-
-  if (error || data.length === 0) {
-    return res.status(401).json({ success: false });
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('authForm');
+  
+  // Проверяем, найдена ли форма
+  if (!form) {
+    console.error('Форма авторизации не найдена!');
+    return;
   }
-  res.json({ success: true });
-};
 
-const response = await fetch('https://pizza-adaptiv.vercel.app/api/auth', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ login, password })
-});
-
-console.log('Статус ответа:', response.status); // Должно быть 200
-const result = await response.json();
-console.log('Ответ сервера:', result); // Должно быть {success: true}
-
-if (result.success) {
-  window.location.href = 'index.html'; // Перенаправление
-} else {
-  alert(result.message || 'Ошибка авторизации');
-}
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Отменяем стандартную отправку формы
+    
+    // Получаем значения полей
+    const login = document.getElementById('login').value;
+    const password = document.getElementById('password').value;
+    
+    // Простая валидация
+    if (!login || !password) {
+      alert('Заполните все поля');
+      return;
+    }
+    
+    try {
+      // Отправляем запрос на сервер
+      const response = await fetch('https://sau-api.vercel.app/api/auth', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ login, password })
+      });
+      
+      // Проверяем статус ответа
+      if (!response.ok) {
+        throw
