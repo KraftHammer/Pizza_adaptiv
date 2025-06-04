@@ -1,3 +1,5 @@
+// Временное разрешение для всех доменов
+res.setHeader('Access-Control-Allow-Origin', '*');
 const { createClient } = require('@supabase/supabase-js');
 
 module.exports = async (req, res) => {
