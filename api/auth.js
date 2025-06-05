@@ -70,32 +70,76 @@ module.exports = async (req, res) => {
 };
 */
 
-app.post('/api/auth', async (req, res) => {
-  const { login, password } = req.body;
-  
+// Исправленный серверный код
+import { Pool } from 'pg';
+import bcrypt from 'bcrypt';
+
+// Конфигурация подключения к Neon
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
+
+export default async function handler(req, res) {
+  // Добавляем CORS-заголовки
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Обработка предварительного OPTIONS-запроса
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  // Обрабатываем только POST-запросы
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
   try {
-    const user = await db.query(
-      `SELECT id, password_hash FROM users WHERE login = $1`,
+    const { login, password } = req.body;
+    console.log('Получены данные:', { login }); // Логируем только логин для безопасности
+
+    // 1. Поиск пользователя в БД
+    const userResult = await pool.query(
+      'SELECT id, password_hash FROM users WHERE login = $1',
       [login]
     );
-    
-    if (user.rows.length === 0) {
-      return res.status(401).json({ success: false, message: "User not found" });
+
+    // 2. Проверка существования пользователя
+    if (userResult.rows.length === 0) {
+      console.log('Пользователь не найден:', login);
+      return res.status(401).json({ 
+        success: false, 
+        message: "Неверный логин или пароль" 
+      });
     }
+
+    const user = userResult.rows[0];
     
-    const isValid = await bcrypt.compare(password, user.rows[0].password_hash);
+    // 3. Проверка пароля
+    const isValidPassword = await bcrypt.compare(password, user.password_hash);
     
-    if (!isValid) {
-      return res.status(401).json({ success: false, message: "Invalid password" });
+    if (!isValidPassword) {
+      console.log('Неверный пароль для:', login);
+      return res.status(401).json({ 
+        success: false, 
+        message: "Неверный логин или пароль" 
+      });
     }
-    
-    res.json({ 
+
+    // 4. Успешная аутентификация
+    console.log('Успешная аутентификация:', login);
+    res.status(200).json({ 
       success: true, 
-      userId: user.rows[0].id 
+      userId: user.id 
     });
     
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ success: false, message: "Server error" });
+  } catch (error) {
+    console.error('Ошибка сервера:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: "Внутренняя ошибка сервера" 
+    });
   }
-});
+}
