@@ -1,3 +1,4 @@
+/*
 const { createClient } = require('@supabase/supabase-js');
 
 module.exports = async (req, res) => {
@@ -67,3 +68,34 @@ module.exports = async (req, res) => {
     });
   }
 };
+*/
+
+app.post('/api/auth', async (req, res) => {
+  const { login, password } = req.body;
+  
+  try {
+    const user = await db.query(
+      `SELECT id, password_hash FROM users WHERE login = $1`,
+      [login]
+    );
+    
+    if (user.rows.length === 0) {
+      return res.status(401).json({ success: false, message: "User not found" });
+    }
+    
+    const isValid = await bcrypt.compare(password, user.rows[0].password_hash);
+    
+    if (!isValid) {
+      return res.status(401).json({ success: false, message: "Invalid password" });
+    }
+    
+    res.json({ 
+      success: true, 
+      userId: user.rows[0].id 
+    });
+    
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
