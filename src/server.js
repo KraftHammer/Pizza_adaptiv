@@ -14,6 +14,7 @@ const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Проверка авторизации
+/*
 app.post('/api/login', async (req, res) => {
   console.log("Получен запрос:", req.body);
   const { username, password } = req.body;
@@ -45,6 +46,59 @@ app.post('/api/login', async (req, res) => {
   } catch (err) {
     console.error("Ошибка сервера:", err);
     res.status(500).json({ error: "Ошибка сервера" });
+  }
+});
+*/
+
+app.post('/api/login', async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    
+    // Временное упрощение: вернуть успех без проверки
+    // return res.json({ success: true });
+    
+    // Простой тест подключения к БД
+    const testQuery = await pool.query('SELECT NOW()');
+    console.log("Тест БД:", testQuery.rows[0]);
+    
+    const userQuery = await pool.query(
+      'SELECT * FROM users WHERE username = $1', 
+      [username]
+    );
+    
+    if (userQuery.rows.length === 0) {
+      return res.status(401).json({ error: "User not found" });
+    }
+    
+    const user = userQuery.rows[0];
+    
+    // Временная замена bcrypt
+    // const validPass = await bcrypt.compare(password, user.password_hash);
+    const validPass = (password === "Test1234");
+    
+    if (!validPass) {
+      return res.status(401).json({ error: "Invalid password" });
+    }
+    
+    res.json({ success: true });
+  } catch (err) {
+    console.error("СЕРЬЕЗНАЯ ОШИБКА:", err.message, err.stack);
+    res.status(500).json({ error: "Server crash" });
+  }
+});
+
+app.get('/test-db', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT NOW()');
+    res.json({
+      status: "DB connected",
+      time: result.rows[0].now
+    });
+  } catch (err) {
+    res.status(500).json({
+      error: "DB connection failed",
+      details: err.message
+    });
   }
 });
 
