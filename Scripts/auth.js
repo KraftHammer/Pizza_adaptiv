@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ login, password })
             });
-                        
+                
             console.log('Статус ответа:', response.status); // Для отладки
             
             if (!response.ok) {
