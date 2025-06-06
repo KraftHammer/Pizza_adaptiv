@@ -13,6 +13,23 @@ const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+
+const { Pool } = require('pg');
+require('dotenv').config();
+
+// Подключение к Supabase
+const pool = new Pool({
+  connectionString: process.env.SUPABASE_URL,
+  ssl: { 
+    rejectUnauthorized: false,
+    require: true
+  }
+});
+
+// Проверка подключения при старте
+pool.query('SELECT NOW()')
+  .then(() => console.log('✅ Подключение к БД успешно'))
+  .catch(err => console.error('❌ Ошибка подключения к БД:', err));
 // Проверка авторизации
 /*
 app.post('/api/login', async (req, res) => {

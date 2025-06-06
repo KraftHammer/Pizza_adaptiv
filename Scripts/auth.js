@@ -11,20 +11,21 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        try {
-            const login = document.getElementById('login').value;
-            const password = document.getElementById('password').value;
+                    try {
+            console.log('Отправка данных:', { username: login, password });
             
-            console.log('Отправка данных:', { login, password }); // Для отладки
-            
-            const API_URL = 'https://pizza-adaptiv.onrender.com/api/login';
             const response = await fetch(API_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ login, password })
+                method: 'POST',
+                headers: { 
+                'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify({ 
+                username: login,  // Ключ должен быть "username"
+                password 
+                })
             });
-                
-            console.log('Статус ответа:', response.status); // Для отладки
+            
+            console.log('Статус ответа:', response.status);
             
             if (!response.ok) {
                 const errorText = await response.text();
@@ -39,9 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 alert(result.message || 'Ошибка авторизации');
             }
-        } catch (error) {
+            } catch (error) {
             console.error('Ошибка:', error);
             alert('Произошла ошибка: ' + error.message);
+            }
         }
-    });
+    )
 });
