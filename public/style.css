@@ -1,0 +1,774 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Кастомный скроллбар */
+::-webkit-scrollbar {
+  width: 6px; /* Немного шире для лучшей видимости */
+  height: 6px;
+  position: fixed; /* Фиксированное позиционирование */
+  z-index: 9999; /* На самом верхнем слое */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px 0; /* Отступы сверху/снизу */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Тонкая граница */
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+html, body {
+  scroll-behavior: smooth;
+    font-family: 'Montserrat Alternates';
+    color: white;
+    background-color: #171918;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    
+
+    overflow-y: overlay; /* Важно для Chrome */
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src: url('./Fonts/MontserratAlternates-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates Italic';
+  src: url('./Fonts/MontserratAlternates-Italic.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
+}
+
+@font-face {
+  font-family: 'MontserratAlternates-Light';
+  src: url('./Fonts/MontserratAlternates-Light.ttf');font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates Medium';
+  src: url('/Fonts/MontserratAlternates-Medium.ttf');font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates Light Italic';
+  src: url('./Fonts/MontserratAlternates-LightItalic.ttf');font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* Для оптимизации загрузки */
+}
+
+.button {
+  background-color: #e4ac06;
+  border-radius: 32px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  margin: 0;
+  padding: 16px;
+}
+
+.button:hover {
+  background-color: #c6980f;
+}
+
+.button--outline {
+  background-color: transparent;
+  border: 2px solid #e4ac06;
+  color: #ffffff;
+}
+
+.button--outline:hover {
+background-color: rgba(228, 172, 6, 0.1);
+}
+
+.button p {
+  background-color: none;
+}
+
+.auth-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* Отступ между кнопкой и ссылкой */
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Стили для ссылки (модифицированные) */
+.linkHide {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+    display: inline-block; /* Чтобы работали отступы */
+}
+
+.linkHide:hover {
+    color: #e4ac06; /* Цвет при наведении как у кнопки */
+}
+
+
+.container {
+  width: 100%;
+  max-width: 100%; /* Важно: убираем фиксированное ограничение */
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  background-color: #171918;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.container-card {
+  max-width: 1440px;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.header .container {
+  display: flex;
+  align-items: auto;
+}
+
+.sub-header-text {
+  font-size: 20px;
+  margin: 20px 0 20px 0;
+  font-family: 'Montserrat Alternates';
+
+}
+
+.logo {
+  background-color: #171918;
+  margin-left: 0px;
+  display: flex;
+  align-items: center;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+  border: 0;
+  color: white;
+  font-family: 'Montserrat Alternates Italic';
+  cursor: pointer;
+}
+
+.logo img {
+  vertical-align: bottom;
+}
+
+.logo h1 {
+  font-size: 1.7vw;
+  font-weight: lighter;
+  padding-left: 8px;
+}
+
+.Order-high-text h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 28px;
+  margin-bottom: 12px;
+
+}
+
+.Title_h2 {
+  font-size: 1.4vw;
+  font-weight: lighter;
+  padding-left: 8px;
+  background-color: transparent;
+  background-color: transparent;
+}
+
+
+.infoBlock {
+  display: flex;
+  margin-left: auto;
+  padding-top: 10.5px;
+  padding-bottom: 10.5px;
+}
+
+.infoContent {
+  display: flex;
+  padding: 0 16px;
+  align-items: center;
+}
+
+.infoContent img {
+  width: 24px;
+  height: 24px;
+}
+
+.infoContent p {
+  font-size: 12px;
+  line-height: 20px;
+  margin-left: 8px;
+}
+
+.imageContainer {
+  width: 100vw; /* Ширина 100% от окна браузера */
+  margin-left: calc(-50vw + 50%); /* Центрирование (если нужно) */
+  overflow: hidden;
+}
+
+.containerCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 42vh;
+}
+
+.containerCenter h1 {
+  margin-top: 0px;
+}
+
+.containerCenter h4 {
+  margin-top: 12px;
+  font-family: 'MontserratAlternates-Light';
+  font-weight: 500;
+}
+
+.auth-center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+ /* Анимация появления сверху */
+        .animated-entry-top {
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: fadeInDown 0.6s ease-out forwards;
+        }
+        
+        /* Анимация появления снизу */
+        .animated-entry-bottom {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Задержки для последовательного появления */
+        .logo {
+            animation-delay: 0.2s;
+        }
+        
+        .subtitle {
+            animation-delay: 0.4s;
+        }
+        
+        .auth-form {
+            animation-delay: 0.6s;
+        }
+        
+        .auth-actions {
+            animation-delay: 0.8s;
+        }
+
+ .input-group {
+  width: 300px;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.input-field input:focus {
+  border-color: #d32f2f;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
+.input-field label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: #999;
+  transition: all 0.3s;
+  pointer-events: none;
+  background-color: #fff;
+  padding: 0 5px;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 12px;
+  color: #d32f2f;
+  background-color: #fff;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.image-container img {
+  width: 100%;
+  max-height: auto;
+  object-fit: cover;
+}
+
+/* Базовые стили меню */
+.menu {
+  display: block; /* Changed from flex to block */
+  width: 100%;
+  background-color: #1e1e1e;
+  padding: 10px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  /* Remove previous positioning and padding */
+  position: static;
+  left: auto;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-list {
+  display: inline-block; /* Changed from flex */
+  margin: 0;
+  padding: 0 15px; /* Added horizontal padding */
+  list-style: none;
+  white-space: nowrap;
+  /* Remove gap property as we'll use margins */
+}
+
+.menu-item {
+  display: inline-block;
+  margin: 0 12px 0 0; /* Right margin only */
+  padding: 0;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.4s ease;
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+.menu-item:first-child {
+  margin-left: 15px; /* First item spacing */
+}
+
+.menu-item:last-child {
+  margin-right: 15px; /* Last item spacing */
+}
+
+
+.menu-item a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  line-height: 1.7;
+}
+
+.menu-item:hover {
+  background-color: #ffffff11;
+}
+
+.card-horizontal {
+  min-width: 250px;
+  height: 80px;
+  background-color: #1e1e1e;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.card-horizontal:hover {
+  background-color: #1f2121;
+}
+
+.container-card-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.image-zone {
+  width: 100%;
+  /* Занимает всю ширину родительского элемента */
+  max-width: 300px;
+  /* Максимальная ширина изображения */
+  margin: 0 auto;
+  /* Центрируем элемент по горизонтали */
+  overflow: hidden;
+  /* Скроем выходящее за пределы содержимое */
+}
+
+.image-zone img {
+  width: 100%;
+  /* Изображение занимает 100% ширины контейнера */
+  height: auto;
+  /* Высота автоматически подстраивается */
+  display: block;
+  /* Убираем отступы под изображением */
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  margin-left: 40px; /* Выравниваем с заголовком */
+}
+
+.AuthorizationButton {
+  background-color: transparent;
+  font-family: 'Montserrat Alternates';
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Вертикальное выравнивание */
+  justify-content: center; /* Горизонтальное выравнивание */
+}
+
+.slider-button {
+  background: rgba(30, 30, 30, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center; /* Вертикальное выравнивание */
+  justify-content: center; /* Горизонтальное выравнивание */
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  padding: 0; /* Убираем стандартные отступы у кнопки */
+  line-height: 1; /* Фиксим вертикальное смещение текста */
+}
+
+.slider-button::before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.slider-button svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.slider-button:hover {
+  background: #1f2121;
+}
+
+.slider-button.left {
+  margin-right: 10px;
+}
+
+.slider-button.right {
+  margin-left: 10px;
+}
+
+.container-card-information h2 {
+  font-family: "MontserratAlternates-Light", sans-serif;
+  font-size: 14px;
+  margin: 5px 0;
+  text-align: left;
+}
+
+.container-card::-webkit-scrollbar {
+  display: none;
+}
+
+.container-card-name {
+  color: white;
+  text-align: left;
+  font-size: 0.8vw;
+  font-family: 'MontserratAlternates-Light';
+  margin-top: auto;
+}
+
+.container-card-price {
+  padding-top: 8px;
+  color: white;
+  text-align: left;
+  font-size: 0.6vw;
+  font-family: 'MontserratAlternates-Light';
+  margin-bottom: auto;
+}
+
+.banner {
+  margin-top: 80px;
+  width: 100%;
+  height: 420px;
+}
+
+.container-left {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 48px 60px;
+  color: white;
+  box-sizing: border-box;
+}
+
+.cards-row {
+  width: 100%;
+  /* height:fit-content; */
+  padding-right: 20px;
+  padding-top: 20px;
+  display: flex;
+  /* Включаем флексбокс */
+  flex-wrap: wrap;
+  /* Позволяем карточкам переноситься на новую строку */
+  margin-right: -20px;
+}
+
+.cards-row .card:last-child {
+  margin-right: 0;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border-radius: 20px;
+  width: calc(25% - 20px); /* Фиксированная ширина вместо min-width */
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Колоночное расположение элементов */
+  position: relative; /* Для абсолютного позиционирования кнопки */
+  min-height: 400px; /* Фиксированная минимальная высота */
+  padding-bottom: 16px;
+}
+
+.main-text-card {
+  padding-bottom: 8px;
+  font-family: 'Montserrat Alternates';
+  font-size: 1.5vw;
+}
+
+.text-zone {
+  flex-grow: 1; /* Занимает все доступное пространство */
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc-text-card {
+  font-family: 'Montserrat Alternates';
+  font-size: 1vw;
+  min-height: 88px;
+}
+
+.small-text {
+  padding-bottom: 4px;
+}
+
+.pizza-size-select {
+  margin: 0px 16px 0px 16px;
+}
+
+.price-and-button-zone {
+  margin: 16px 16px 0px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: 'Montserrat Alternates Medium';
+}
+
+.button-zone {
+  display: flex;
+  height: fit-content;
+  padding-top: 4px;
+}
+
+.button-size,
+.button-size-not-selected {
+  min-height: 44px;
+  /* Убедитесь, что высота одинакова */
+  min-width: 78px;
+  /* Убедитесь, что ширина одинакова */
+  border-radius: 32px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border 0.2s ease;
+  /* Добавьте transition для border */
+}
+
+.button-size,
+.button-size-not-selected {
+  box-sizing: border-box;
+  /* Добавьте это свойство */
+}
+
+.button-size {
+  background-color: #FEC009;
+  border: 2px solid transparent;
+  /* Добавьте прозрачную границу */
+}
+
+.button-size-not-selected {
+  border: 2px solid #FEC009;
+  background-color: transparent;
+  /* Убедитесь, что фон прозрачный */
+}
+
+.button-size-not-selected:hover {
+  background-color: #c6980f28;
+}
+
+.button-buy {
+  border-radius: 32px;
+  border: 2px solid #FEC009;
+  min-height: 52px;
+  min-width: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.button-buy:hover {
+  background-color: #c6980f4d;
+}
+
+.footer {
+  position: bottom;
+  margin-top: 120px;
+  width: 100%;
+  height: 76px;
+  background-color: #1e1e1e;
+  text-align: center;
+}
+
+.footer-main-text {
+  font-family: 'Montserrat Alternates Light Italic';
+  padding-top: 12px;
+  font-size: 1.6vw;
+}
+
+.footer-desc-text {
+  font-family: 'MontserratAlternates-Light';
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Круглая форма */
+    background: #ff6b00; /* Оранжевый цвет */
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
+    z-index: 1000; /* Чтобы кнопка была поверх других элементов */
+}
+
+#scrollToTopBtn:hover {
+    background: #e65c00; /* Темнее при наведении */
+}

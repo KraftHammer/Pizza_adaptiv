@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша пицца</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="icon" href="Images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+                <button class="logo" onclick="window.location = 'index.html'">
+                    <img src="Images/logo.png" alt="logo" width="64px"> <!--Обновить лого на более чёткое-->
+                    <h1>Наша пицца</h1>
+                </button>
+            <div class="infoBlock">
+                <div class="infoContent">
+                    <img src="Images/Header_icon_1.png" alt="Geo">
+                    <p>с. Павловск, улица Ленина, 12</p>
+                </div>
+                <div class="infoContent">
+                    <img src="Images/Header_icon_2.png" alt="clock">
+                    <p>c 9:00 до 21:00</p>
+                </div>
+                <div class="infoContent">
+                    <img src="Images/Header_icon_3.png" alt="phone">
+                    <p>+7 385-260-66-62</p>
+                </div>
+                <div class="infoContent">
+                    <img src="Images/Pizza_icon.png" alt="delivery">
+                    <p>Доставка: 606-662</p>
+                </div>
+                <div class="infoContent">
+                    <button class="AuthorizationButton" onclick="window.location = 'AuthorizationPage.html'">
+                        <img src="Images/UserCircle.png" alt="delivery">
+                        <p>Вход</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="imageContainer">  <!-- Обратите внимание на "imageContainer" -->
+  <div class="image-container">  <!-- А здесь "image-container" -->
+    <img src="Images/Image zone.svg" alt="Пример">  <!-- Стиль применяется к этому тегу -->
+  </div>
+</div>
+
+    
+        <nav class="menu">
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <a href="#pizza">Пицца</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#shaurma">Шаурма</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#Drinks">Напитки</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#salads">Салаты</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#sushi">Роллы</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#Cheesecake">Чизкейки</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#Croassaunt">Круасаны</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+<div class="container-left">
+    <div class="Order-high-text">
+        <h2>Часто заказывают</h2>
+    </div>
+    <div class="slider-container">
+        <button class="slider-button left" aria-label="Прокрутить влево">‹</button>
+        <div class="container-card" id="popular-items">
+            <div class="card-horizontal">
+                <div class="container-card-image">
+                    <img src="Images/pizza.png" alt="Здесь картинка" width="80px">
+                </div>
+                <div class="container-card-information">
+                    <div class="container-card-name">
+                        <h2>4 мяса</h2>
+                    </div>
+                    <div class="container-card-price">
+                        <h2>От 560 рублей</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card-horizontal">
+                <div class="container-card-image">
+                    <img src="Images/pizza.png" alt="Здесь картинка" width="80px">
+                </div>
+                <div class="container-card-information">
+                    <div class="container-card-name">
+                        <h2>4 мяса</h2>
+                    </div>
+                    <div class="container-card-price">
+                        <h2>От 560 рублей</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card-horizontal">
+                <div class="container-card-image">
+                    <img src="Images/pizza.png" alt="Здесь картинка" width="80px">
+                </div>
+                <div class="container-card-information">
+                    <div class="container-card-name">
+                        <h2>4 мяса</h2>
+                    </div>
+                    <div class="container-card-price">
+                        <h2>От 560 рублей</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card-horizontal">
+                <div class="container-card-image">
+                    <img src="Images/pizza.png" alt="Здесь картинка" width="80px">
+                </div>
+                <div class="container-card-information">
+                    <div class="container-card-name">
+                        <h2>4 мяса</h2>
+                    </div>
+                    <div class="container-card-price">
+                        <h2>От 560 рублей</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card-horizontal">
+                <div class="container-card-image">
+                    <img src="Images/pizza.png" alt="Здесь картинка" width="80px">
+                </div>
+                <div class="container-card-information">
+                    <div class="container-card-name">
+                        <h2>4 мяса</h2>
+                    </div>
+                    <div class="container-card-price">
+                        <h2>От 560 рублей</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="card-horizontal">
+                <div class="container-card-image">
+                    <img src="Images/pizza.png" alt="Здесь картинка" width="80px">
+                </div>
+                <div class="container-card-information">
+                    <div class="container-card-name">
+                        <h2>4 мяса</h2>
+                    </div>
+                    <div class="container-card-price">
+                        <h2>От 560 рублей</h2>
+                    </div>
+                </div>
+            </div>
+            <!-- Остальные карточки -->
+        </div>
+        <button class="slider-button right" aria-label="Прокрутить вправо">›</button>
+    </div>
+</div>
+<!--Блок со всеми позициями, пицца-->
+    <div class="container-left">
+        <div class="header-text">
+            <h2 class="pizza" id="pizza">Пицца</h2>
+        </div>
+        <div class="cards-row">
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/pizza.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>4 мяса</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: сервелат, ветчина, пепперони, куриное филе, сыр моцарелла, соус томатный, орегано</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                            30 см
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            40 см
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 560 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/pizza.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Барбекю</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: пепперони, куриное филе, бекон, перец болгарский, маслины, сыр мацарелла, соус томатный, соус барбекю, орегано</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                            30 см
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            40 см
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 560 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в орзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/pizza.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Гавайская</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: куриное филе, ветчина, ананасы, сыр моцарелла, соус сливочный</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                            30 см
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            40 см
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 540 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/pizza.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Пепперони</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: пепперони, сыр моцарелла, соус томатный, орегано</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                            30 см
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            40 см
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 540 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cards-row">
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/pizza.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Охотничья</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: колбаски охотничьи, сервелат, корнишоны, сыр моцарелла, лук красный маринованный, соус томатный, орегано</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                            30 см
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            40 см
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 510 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/pizza.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Ветчина-грибы</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: ветчина, шампиньоны, томаты, сыр моцарелла, соус сливочный</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                            30 см
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            40 см
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 490 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/pizza.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Цезарь</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: курица, томаты, капуста пекинская, сыр пармезан, сыр моцарелла, соус сливочный</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                            30 см
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            40 см
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 540 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/pizza.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>4 сыра</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: сыр моцарелла, сыр пармезан, сыр гауда, сыр с голубой плесенью, соус томатный, орегано</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                            30 см
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            40 см
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 660 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Блок с шаурмой-->
+    <div class="container-left">
+        <div class="header-text">
+            <h2 class="shaurma" id="shaurma">Шаурма</h2>
+        </div>
+        <div class="cards-row">
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/shaurma.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Фирменная</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: стрипсы, огурец, томат, капуста, маринованный лук, соус на выбор</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Стандарт</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средняя</p>
+                        </div>
+                    </div>
+                    <div class="button-zone" style="margin-top: 4px;">
+                        <div class="button-size-not-selected" data-size="30cm">
+                            <p style="padding: 0 8px 0 8px;">Большая</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 200 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/shaurma.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Стандарт</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: куриное филе, огурец, томат, капуста, маринованный лук, соус на выбор</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Стандарт</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средняя</p>
+                        </div>
+                    </div>
+                    <div class="button-zone" style="margin-top: 4px;">
+                        <div class="button-size-not-selected" data-size="30cm">
+                            <p style="padding: 0 8px 0 8px;">Большая</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 215 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в орзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/shaurma.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Берлин</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: картофель фри, куриное филе, огурец, томат, маринованный лук, соус на выбор</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Стандарт</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средняя</p>
+                        </div>
+                    </div>
+                    <div class="button-zone" style="margin-top: 4px;">
+                        <div class="button-size-not-selected" data-size="30cm">
+                            <p style="padding: 0 8px 0 8px;">Большая</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 220 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/shaurma.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Домашняя</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: картофель фри, куриное филе, огурец, томат, маринованный лук, соус на выбор, морковь по-корейски или маринованные шампиньоны</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Стандарт</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средняя</p>
+                        </div>
+                    </div>
+                    <div class="button-zone" style="margin-top: 4px;">
+                        <div class="button-size-not-selected" data-size="30cm">
+                            <p style="padding: 0 8px 0 8px;">Большая</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 225 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cards-row">
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/shaurma.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Греческая</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: куриное филе, сыр фета, огурец, томат, капуста, маринованный лук, соус на выбор</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Стандарт</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средняя</p>
+                        </div>
+                    </div>
+                    <div class="button-zone" style="margin-top: 4px;">
+                        <div class="button-size-not-selected" data-size="30cm">
+                            <p style="padding: 0 8px 0 8px;">Большая</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 230 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/shaurma.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Деревенская</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: картофель фри, куриное филе, огурец, томат, маринованный лук, соус на выбор</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Стандарт</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средняя</p>
+                        </div>
+                    </div>
+                    <div class="button-zone" style="margin-top: 4px;">
+                        <div class="button-size-not-selected" data-size="30cm">
+                            <p style="padding: 0 8px 0 8px;">Большая</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 240 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/shaurma.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Гавайская</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: куриное филе, сыр моцарелла, ананас, соус чесночный</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Стандарт</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средняя</p>
+                        </div>
+                    </div>
+                    <div class="button-zone" style="margin-top: 4px;">
+                        <div class="button-size-not-selected" data-size="30cm">
+                            <p style="padding: 0 8px 0 8px;">Большая</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 250 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/shaurma.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Мексика</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Состав: куриное филе, томат, капуста, острый соус табаджан, кукуруза, красный острый соус, халапеньо, маринованный лук</p>
+                    </div>
+                </div>
+                
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Размеры</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Стандарт</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средняя</p>
+                        </div>
+                    </div>
+                    <div class="button-zone" style="margin-top: 4px;">
+                        <div class="button-size-not-selected" data-size="30cm">
+                            <p style="padding: 0 8px 0 8px;">Большая</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 255 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Блок с напитками-->
+    <div class="container-left">
+        <div class="header-text">
+            <h2 class="drinks" id="Drinks">Напитки</h2>
+        </div>
+        <div class="sub-header-text">
+            <p>Горячие напитки</p>
+        </div>
+        <div class="cards-row">
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Эспрессо</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Сироп: Табак-ваниль, Кокос, Ментол, Лесной орех, Irish cream - 30 руб. шт</p>
+                    </div>
+                </div>
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Выберите размер</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Маленький</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 50 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Американо</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Сироп: Табак-ваниль, Кокос, Ментол, Лесной орех, Irish cream - 30 руб. шт</p>
+                    </div>
+                </div>
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Выберите размер</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Маленький</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средний</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 70 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Капучино</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Сироп: Табак-ваниль, Кокос, Ментол, Лесной орех, Irish cream - 30 руб. шт</p>
+                    </div>
+                </div>
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Выберите размер</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Маленький</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средний</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Чай черный/зеленый</h4>
+                    </div>
+                    <div class="desc-text-card">
+                        <p>Сироп: Табак-ваниль, Кокос, Ментол, Лесной орех, Irish cream - 30 руб. шт</p>
+                    </div>
+                </div>
+                <div class="pizza-size-select">
+                    <div class="small-text">
+                        <h5>Выберите размер</h5>
+                    </div>
+                    <div class="button-zone">
+                        <div class="button-size" data-size="30cm">
+                           <p style="padding: 0 8px 0 8px;">Маленький</p>
+                        </div>
+                        <div class="button-size-not-selected" data-size="40cm">
+                            <p style="padding: 0 8px 0 8px;">Средний</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>От 30 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-header-text">
+            <p>Холодные напитки</p>
+        </div>
+        <div class="cards-row">
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Клубничный мохито</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Клубника-банан</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Дыня-клубника</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Персик-клубника</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Малина-кокос</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Арбуз-дыня</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Лаванда-маракуйя</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Манго-маракуйя</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Персик-маракуйя</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Сливочный ананас</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Лаванда-лемонграсс</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Пина Колада</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>120 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Классический молочный коктейль</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>150 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Молочный коктейль с манго</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>150 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Молочный коктейль с бананом</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>150 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-zone">
+                    <img src="Images/coffee_image.png" height="300px" width="300px">
+                </div>
+                <div class="text-zone">
+                    <div class="main-text-card">
+                        <h4>Молочный коктейль с персиком</h4>
+                    </div>
+                </div>
+                <div class="price-and-button-zone">
+                    <div class="price">
+                        <p>150 ₽</p>
+                    </div>
+                    <div class="button-buy" onclick="alert('Заказ добавлен в корзину')">
+                        <img src="Images/ShoppingCartSimple.png" height="24px" width="24px">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer class="footer">
+            <p class="footer-main-text">Наша пицца</p>
+            <p class="footer-desc-text">«Все права защищены»</p>
+    </footer>
+    <script src="./Scripts/toggleActive.js"></script>
+  <script src="./Scripts/ScrollTo.js"></script>
+  <script src="./Scripts/swipeCards.js"></script>
+  <script src="./Scripts/scrollToTop.js"></script>
+  <button id="scrollToTopBtn" title="Наверх">↑</button>
+</body>
+</html>

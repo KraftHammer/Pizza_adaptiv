@@ -1,0 +1,626 @@
+@media (min-width: 1440px) {
+  .menu {
+    padding: 20px 60px;
+  }
+  
+  .menu-list {
+    margin-left: 10%;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin: 40px 0;
+  }
+  
+  .container-left {
+    padding: 0 60px;
+  }
+
+  .container-left {
+    padding: 0 60px;
+  }
+  
+  .container-card {
+    justify-content: flex-start; /* Выравниваем по левому краю */
+  }
+  
+  .card-horizontal {
+    min-width: 286px;
+    height: 100px;
+  }
+  
+  .container-card-image img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .button {
+    min-height: 56px;
+  }
+}
+
+/* Адаптация для 1024px */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .container h1 {
+    font-size: 20px;
+  }
+
+  .infoContent p {
+    font-size: 11px;
+  }
+
+  .image-container {
+    height: 300px;
+  }
+  
+  .image-container img {
+    height: 300px; /* Фиксированная высота (или оставь auto) */
+  }
+
+  .menu {
+    padding: 20px 30px;
+  }
+  
+  .menu-list {
+    margin-left: 5%;
+    gap: 8px;
+  }
+  
+  .menu-item {
+    margin-left: 8px;
+  }
+  
+  .menu-item a,
+  .menu-item p {
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+  
+  .button {
+    min-width: 140px;
+    height: 42px;
+  }
+
+  .footer-main-text {
+    padding-top: 18px;
+  }
+}
+
+/* Адаптация для 4K (2560px+) */
+@media (min-width: 2560px) {
+
+  .container-left {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 48px 60px;
+  }
+  
+  .Order-high-text h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .container-card {
+    max-width: 2000px;
+    margin: 30px auto;
+    padding-bottom: 40px;
+    gap: 32px;
+  }
+  
+  .card-horizontal {
+    min-width: 400px;
+    height: 130px;
+    margin-right: 30px;
+    border-radius: 50px;
+    padding: 12px 20px;
+    margin: auto;
+  }
+  
+  .container-card-image img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .container-card-information h2 {
+    font-size: 22px;
+  }
+
+  .slider-button {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+}
+
+.slider-button.left {
+    margin-right: 20px;
+}
+
+.slider-button.right {
+    margin-left: 20px;
+}
+
+  .pizza {
+    font-size: 36px;
+    padding: 32px 0 20px 0;
+  }
+
+  .shaurma{
+    font-size: 36px;
+    padding: 32px 0 20px 0;
+  }
+
+  .container {
+    padding: 0 5%; /* Гибкие отступы */
+    max-width: none; /* Полная ширина экрана */
+    min-height: 120px;
+  }
+  
+  .container p {
+    font-size: 20px;
+  }
+  
+    .imageContainer {
+      max-width: none; /* Снимаем ограничение */
+    }
+  
+    .image-container img {
+      min-height: 500px; /* Увеличиваем высоту для 4K */
+      width: 100%;
+    }
+
+    .menu {
+      padding: 30px 5%;
+      max-width: 2560px;
+    }
+
+    .menu::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, #171918, rgba(23, 25, 24, 0.25));
+      z-index: -1;
+    }
+  
+    .button {
+      left: 5%;
+      font-size: 24px;
+      min-height: 72px;
+      min-width: 200px;
+    }
+  
+    .menu-list {
+      position: relative;
+      left: -76.5px; /* Компенсация половины ширины кнопки */
+    }
+    
+    .menu-item a {
+      padding: 15px 25px;
+      font-size: 28px;
+    }
+
+    .card {
+    width: calc(25% - 25px); /* 5 карточек в ряд */
+    min-height: 450px; /* Увеличиваем высоту */
+    border-radius: 40px;
+    padding-bottom: 32px;
+  }
+
+    .main-text-card {
+    font-size: 1.2vw; /* Уменьшаем зависимость от vw */
+    padding: 0 12px 0 12px;
+  }
+
+    .desc-text-card {
+      font-size: 0.9vw;
+      min-height: 120px; /* Фиксированная высота описания */
+      padding: 20px 12px 0 12px;
+    }
+
+    .card h5 {
+      font-size: 20px;
+      padding: calc(10% - 20px) 12px 12px 12px;
+    }
+
+    .button-size {
+      min-height: 72px;
+      min-width: 156px;
+      font-size: 20px;
+    }
+
+    .button-size-not-selected {
+      min-height: 72px;
+      min-width: 156px;
+      font-size: 20px;
+    }
+
+    .price-and-button-zone{
+      padding: calc(10% - 20px) 12px 0 12px;
+    }
+
+    .price-and-button-zone p{
+      font-size: 24px;
+      font-family: "Montserrat Alternates Medium";
+    }
+
+    .button-buy {
+      min-height: 72px;
+      min-width: 156px;
+    }
+
+    .button-buy img{
+      width: 40px;
+      height: 40px;
+    }
+
+    .footer {
+      min-height: 120px;
+    }
+
+    .footer-main-text {
+      padding-top: 20px;
+      font-size: 40px;
+    }
+
+    .footer-desc-text {
+      font-size: 20px;
+    }
+}
+
+@media (width < 1025px) {
+    .button-zone {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    .button {
+      min-width: 140px;
+      min-height: 56px;
+      font-size: 12px;
+      flex-shrink: 0;
+      position: sticky; /* Фиксируем кнопку */
+      left: 16px; /* Прижимаем к левому краю */
+      z-index: 1; /* Поднимаем над скроллом */
+      font-size: 14px;
+    }
+  }
+  
+  @media (width < 769px) {
+    .cards-row {
+      width: 100%;
+      padding-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-right: -20px;
+    }
+
+    #scrollToTopBtn {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+    .button {
+      min-width: 90px;
+      min-height: 52px;
+      font-size: 12px;
+      flex-shrink: 0;
+      position: sticky; /* Фиксируем кнопку */
+      left: 16px; /* Прижимаем к левому краю */
+      z-index: 1; /* Поднимаем над скроллом */
+    }
+
+    .menu {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      gap: 0; /* Убираем стандартный gap */
+      padding: 30px 40px 30px 40px;
+    }
+
+    .logo h1{
+      font-size: 16px;
+    }
+
+    .container {
+      padding: 0 20px;
+    }
+
+    .infoBlock p {
+        max-width: 140px;
+    }
+
+    .infoContent {
+        padding: 0 8px;
+    }
+
+    .infoContent p{
+        font-size: 8px;
+    }
+
+    .menu::-webkit-scrollbar {
+      display: none; /* Скрываем скроллбар в WebKit */
+    }
+
+    .menu-list {
+      display: flex;
+      padding-left: 8px; /* Отступ от кнопки */
+      gap: 12px;
+      min-height: auto;
+      align-items: center;
+    }
+  
+    .menu-item {
+      flex-shrink: 0;
+    }
+  
+    .menu-item a{
+      font-size: 12px;
+      padding: 8px 12px;
+      white-space: nowrap;
+      background-color: transparent;
+    }
+  
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 20px;
+      width: 22.65%;
+      padding-bottom: 16px;
+      flex: none;
+      max-width: none;
+      margin-right: 0px;
+    }
+
+    .card h4 {
+      font-size: 16px;
+    }
+
+    .price-and-button-zone p{
+      font-size: 10px;
+    }
+
+    .footer p {
+      font-size: 18px;
+    }
+  }
+  
+  @media (width < 650px) {
+
+    .imageContainer {
+      display: none;
+    }
+
+    .button {
+      min-width: 90px;
+      min-height: 52px;
+      font-size: 12px;
+      flex-shrink: 0;
+      position: sticky; /* Фиксируем кнопку */
+      left: 16px; /* Прижимаем к левому краю */
+      z-index: 1; /* Поднимаем над скроллом */
+    }
+
+    .menu {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      gap: 0; /* Убираем стандартный gap */
+    }
+
+    .menu::-webkit-scrollbar {
+      display: none; /* Скрываем скроллбар в WebKit */
+    }
+
+    .menu-list {
+      display: flex;
+      padding-left: 8px; /* Отступ от кнопки */
+      gap: 12px;
+      min-height: auto;
+      align-items: center;
+    }
+  
+    .menu-item {
+      flex-shrink: 0;
+    }
+  
+    .menu-item a{
+      font-size: 12px;
+      padding: 8px 12px;
+      white-space: nowrap;
+      background-color: transparent;
+    }
+
+    .card{
+      width: 45%;
+      background-color: #1e1e1e;
+    }
+    .container {
+      flex-direction: column;
+    }
+  
+    .logo h1 {
+      font-size: 16px;
+    }
+  
+    .infoBlock {
+      display: flex;
+      padding-top: 10.5px;
+      padding-bottom: 10.5px;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0px;
+    }
+  }
+  
+  @media (width < 426px) {
+
+    .imageContainer {
+      display: none;
+    }
+
+    .button {
+    min-width: 90px;
+    font-size: 12px;
+    flex-shrink: 0;
+    position: sticky; /* Фиксируем кнопку */
+    left: 16px; /* Прижимаем к левому краю */
+    z-index: 1; /* Поднимаем над скроллом */
+  }
+
+    .button-buy {
+      min-width: 116px;
+    }
+
+    .menu {
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      gap: 0; /* Убираем стандартный gap */
+    }
+
+    .menu::-webkit-scrollbar {
+      display: none; /* Скрываем скроллбар в WebKit */
+    }
+
+    .menu-list {
+      display: flex;
+      padding-left: 8px; /* Отступ от кнопки */
+      gap: 12px;
+      min-height: auto;
+      align-items: center;
+    }
+  
+    .menu-item {
+      flex-shrink: 0;
+    }
+  
+    .menu-item a{
+      font-size: 12px;
+      padding: 8px 12px;
+      white-space: nowrap;
+      background-color: transparent;
+    }
+  
+    .container-left {
+      padding: 16px 20px;
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      border-radius: 20px;
+      width: 45%;
+      padding-bottom: 16px;
+      flex: none;
+      max-width: none;
+      margin-right: 0px;
+      
+    }
+
+    .card h4 {
+      font-size: 14px !important;
+  }
+
+    .price p {
+      font-size: 12px !important;
+  }
+
+    .main-text-card {
+      padding: 0 12px;
+    }
+
+    .desc-text-card p{
+      font-size: 10.8px;
+      padding: 8px 12px;
+    }
+  
+    .price-and-button-zone{
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .text-zone{
+      min-height: 135px;
+      padding: 0 0 0 0;
+    }
+
+    .pizza-size-select {
+      padding-top: 12px;
+    }
+
+    .button {
+      min-height: 52px;
+      font-size: 12px;
+    }
+
+    .Order-high-text h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      padding-left: 0;
+  }
+
+    .slider-container {
+      margin-left: 0px;
+      padding-left: -12px;
+  }
+
+    .card-horizontal {
+      min-width: 250px;
+    }
+
+    .infoContent {
+      display: flex;
+      padding: 0 16px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .infoContent img {
+      display: none;
+    }
+
+
+    .infoContent p{
+      min-width: 300px;
+    }
+
+}
+
+@media (width < 376px) { 
+
+  .slider-container {
+    margin-left: -12px;
+}
+
+  .footer p{
+    font-size: 14px;
+  }
+
+  .main-text-card {
+    padding: 0 12px;
+  }
+
+  .desc-text-card p{
+    font-size: 10.8px;
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+}
