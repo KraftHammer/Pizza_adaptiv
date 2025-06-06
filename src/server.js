@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 // Подключение к SQLite (файл на Persistent Disk)
-const dbPath = path.join('/data', 'pizza.db');
+const dbPath = path.join(__dirname, '..', 'data', 'pizza.db');
 const db = new sqlite3.Database(dbPath);
 
 // Создание таблицы пользователей
