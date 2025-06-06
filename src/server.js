@@ -20,10 +20,16 @@ require('dotenv').config();
 // Подключение к Supabase
 const pool = new Pool({
   connectionString: process.env.SUPABASE_URL,
-  ssl: { 
+  ssl: {
     rejectUnauthorized: false,
     require: true
-  }
+  },
+  connectionTimeoutMillis: 5000, // Таймаут 5 секунд
+  idleTimeoutMillis: 30000
+});
+
+pool.on('error', err => {
+  console.error('Ошибка подключения к БД:', err);
 });
 
 // Проверка подключения при старте
