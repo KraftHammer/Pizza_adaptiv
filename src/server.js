@@ -42,5 +42,10 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+// Обработчик для корневого маршрута
+app.get('/', (req, res) => {
+  res.send('Привет! Ваш сервер работает.');
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Сервер запущен на порту ${PORT}`));
