@@ -15,30 +15,36 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Проверка авторизации
 app.post('/api/login', async (req, res) => {
+  console.log("Получен запрос:", req.body);
   const { username, password } = req.body;
-
+  
   try {
-    // 1. Ищем пользователя в БД
-    const { data: user, error } = await supabase
-      .from('users')
-      .select('*')
-      .eq('username', username)
-      .single();
-
-    if (error || !user) {
-      return res.status(401).json({ error: 'Неверный логин или пароль' });
+    const result = await pool.query(
+      'SELECT * FROM users WHERE username = $1', 
+      [username]
+    );
+    
+    console.log("Найден пользователь:", result.rows[0] ? "Да" : "Нет");
+    
+    if (result.rows.length === 0) {
+      console.log("Пользователь не найден");
+      return res.status(401).json({ error: "Неверный логин или пароль" });
     }
-
-    // 2. Проверяем пароль
-    const isValid = await bcrypt.compare(password, user.password_hash);
-    if (!isValid) {
-      return res.status(401).json({ error: 'Неверный пароль' });
+    
+    const user = result.rows[0];
+    const validPass = await bcrypt.compare(password, user.password_hash);
+    
+    console.log("Пароль верен:", validPass);
+    
+    if (!validPass) {
+      console.log("Хеш пароля из БД:", user.password_hash);
+      return res.status(401).json({ error: "Неверный логин или пароль" });
     }
-
-    // 3. Успешный вход
-    res.json({ success: true, user: { id: user.id, username: user.username } });
+    
+    res.json({ success: true });
   } catch (err) {
-    res.status(500).json({ error: 'Ошибка сервера' });
+    console.error("Ошибка сервера:", err);
+    res.status(500).json({ error: "Ошибка сервера" });
   }
 });
 
